@@ -10,14 +10,6 @@ Two HTTP services that communicate over the network: **Service A** (Echo API) an
 
 <img width="859" height="178" alt="Pasted Graphic 3" src="https://github.com/user-attachments/assets/be11876f-40b1-42e4-a6a5-2abd9d60b322" />
 
-
-## What You Will Build
-
-| Service | Port | Endpoints |
-|--------|------|-----------|
-| **Service A** (Echo API) | 8080 | `GET /health` → `{"status":"ok"}` · `GET /echo?msg=hello` → `{"echo":"hello"}` |
-| **Service B** (Client) | 8081 | `GET /health` → `{"status":"ok"}` · `GET /call-echo?msg=hello` → calls Service A and returns combined response |
-
 ## How to Run Locally
 
 **Prerequisites:** Python 3.10+, Git (no external dependencies)

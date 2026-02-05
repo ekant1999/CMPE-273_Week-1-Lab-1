@@ -2,6 +2,15 @@
 
 Two HTTP services that communicate over the network: **Service A** (Echo API) and **Service B** (Client). Service B calls Service A with a timeout; when Service A is down, Service B returns HTTP 503 and logs the error.
 
+<img width="1148" height="173" alt="42-44 164449 (D0P9  servicenservice-s endpeistaesilecte statusserres" src="https://github.com/user-attachments/assets/807fe52e-1338-4e4a-a776-69a1b6c61c1b" />
+
+
+<img width="589" height="183" alt="• ekantkapgate@Ekants-MacBook-Air service-b  python3 app-py" src="https://github.com/user-attachments/assets/5085795d-e1d6-41be-a1f0-0c0f3b440108" />
+
+
+<img width="859" height="178" alt="Pasted Graphic 3" src="https://github.com/user-attachments/assets/be11876f-40b1-42e4-a6a5-2abd9d60b322" />
+
+
 ## What You Will Build
 
 | Service | Port | Endpoints |
@@ -87,13 +96,6 @@ Service B log example:
 ## What Makes This Distributed?
 
 This setup is **distributed** because **two separate processes** (Service A and Service B) run independently and communicate **over the network** (HTTP on localhost). Each service can fail on its own: if you stop Service A, Service B keeps running but correctly reports failure (503) when it cannot reach A. There is no shared memory—only messages over the wire—and the client (Service B) uses a **timeout** so it does not hang forever when the provider (Service A) is slow or down. That independence of processes and failure, plus network-based communication and timeout handling, are the core traits of a small distributed system.
-
-## Requirements Checklist
-
-- [x] Two independent processes (separate terminals)
-- [x] HTTP; request logging with service name, endpoint, status, latency
-- [x] Service B uses a timeout when calling Service A
-- [x] Failure demo: stop Service A → Service B returns 503 and logs an error
 
 ## Reference
 
